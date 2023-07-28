@@ -14,7 +14,7 @@ To understand Docker concepts and able to containerize a Node.js application eff
    * If yes, you can go to command prompt or your machine terminal run: `wsl.exe --install` `or wsl.exe --update`
 4. You can register and login your docker account.
 5. Final step is to make sure your docker version or docker is properly installed on machine by checking it on command prompt or terminal `docker --version`
-<br>
+
 ![alt text](assets/image/ss-docker-version.png "My Docker Version")
 
 ###
