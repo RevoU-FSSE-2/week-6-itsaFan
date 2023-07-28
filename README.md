@@ -79,7 +79,8 @@ EXPOSE 3001
 CMD ["npm", "start"]
 ```
 3. Next step, open command prompt or terminal on the same project directory.
-4. On terminal, to build the Docker image run this command: `docker build -t my-node-app .` _note: my-node-app is the image name, so you can customize it_
+4. On terminal, to build the Docker image run this command: `docker build -t my-node-app .`
+   <Br> _note: my-node-app is the image name, so you can customize it_
    * Example successfully build: ![alt text](assets/image/ss-docker-build.png "My Docker Build")
 5. Open your docker application and go to images, you will see there newly added image.
   * Example: ![alt text](assets/image/ss-docker-run.png "My Docker Start the app")
@@ -87,6 +88,10 @@ CMD ["npm", "start"]
   * If successful, you will see the screen like this: 
    ![alt text](assets/image/ss-docker-success.png "App success")
 
+### Important notes:
+ It's perfectly fine not to have Node.js installed on your local machine when using Docker to run a Node.js application. Docker allows you to package your application and its dependencies into a container, which can then be executed in an isolated environment. This means you don't need to have Node.js or any other dependencies installed directly on your local machine.
+ _On my case here, I dont have node installed and I can still run it like the example above_<br>
+   ![alt text](assets/image/ss-no-node.png "App success")
 
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/nj7iw4Wb)
