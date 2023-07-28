@@ -19,7 +19,7 @@ To understand Docker concepts and able to containerize a Node.js application eff
 
 #### Start with simple node application.
 1. Create an empty folder for the project
-2. Create app.js file and run your own code editor
+2. Create `app.js` file and run your own code editor
 3. Write simple code, on this assignment the code below is provided by the instructor:
 ```javascript
 const http = require('http');
@@ -37,7 +37,7 @@ server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
-4. Create package.json file on the same working directory
+4. Create `package.json` file on the same working directory
 5. Write the configuration and dependencies for our node js application. You can follow this simple package below:
 
 ```json
@@ -53,6 +53,33 @@ server.listen(port, hostname, () => {
   "dependencies": {}
 }
 ```
-#### 
+#### Next, we dockerize our small project
+1. Create file named `Dockerfile`
+2. Write the line like this, you can visit this [Link](https://docs.docker.com/language/nodejs/build-images/) to read the full documentation.
+```Dockerfile
+# Choosing node latest for this app
+FROM node:lts-slim
+
+# Create and set a working directory for the project
+WORKDIR /app
+
+# Copying the package.json to the docker container
+COPY package*.json ./
+
+# Install Node dependencies
+RUN npm install
+
+# Copying the rest of the application files to the container
+COPY . .
+
+# Exposing the port for this app
+EXPOSE 3001
+
+# Executing and start app.js
+CMD ["npm", "start"]
+```
+3. Next step, open command prompt or terminal on the same project directory.
+4. On terminal, to build the Docker image run this command: `docker build -t my-node-app .` _note: my-node-app is the image name, so you can customize it_
+   * Example: 
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/nj7iw4Wb)
