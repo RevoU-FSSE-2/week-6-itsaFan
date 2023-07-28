@@ -80,6 +80,13 @@ CMD ["npm", "start"]
 ```
 3. Next step, open command prompt or terminal on the same project directory.
 4. On terminal, to build the Docker image run this command: `docker build -t my-node-app .` _note: my-node-app is the image name, so you can customize it_
-   * Example: 
+   * Example successfully build: ![alt text](assets/image/ss-docker-build.png "My Docker Build")
+5. Open your docker application and go to images, you will see there newly added image.
+  * Example: ![alt text](assets/image/ss-docker-run.png "My Docker Start the app")
+6. Click Run to start the application.
+  * If successful, you will see the screen like this: 
+   ![alt text](assets/image/ss-docker-success.png "App success")
+
+
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/nj7iw4Wb)
