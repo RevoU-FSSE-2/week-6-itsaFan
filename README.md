@@ -17,8 +17,42 @@ To understand Docker concepts and able to containerize a Node.js application eff
 
 ![alt text](assets/image/ss-docker-version.png "My Docker Version")
 
-###
+#### Start with simple node application.
+1. Create an empty folder for the project
+2. Create app.js file and run your own code editor
+3. Write simple code, on this assignment the code below is provided by the instructor:
+```javascript
+const http = require('http');
 
+const hostname = '0.0.0.0';
+const port = 3001;
 
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+4. Create package.json file on the same working directory
+5. Write the configuration and dependencies for our node js application. You can follow this simple package below:
+
+```json
+{
+  "name": "steff-docker-app",
+  "version": "1.0.0",
+  "description": "Assignment NodeJS on Docker",
+  "author": "Steffansim",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {}
+}
+```
+#### 
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/nj7iw4Wb)
